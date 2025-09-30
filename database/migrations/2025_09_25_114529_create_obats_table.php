@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('produsen_obat',100)->nullable();
             $table->integer('stok')->default(0);
             $table->decimal('harga', 10, 2);
-            $table->foreignId('kategori_id')->constrained();
+            $table->foreignId('kategori_id')->setNull();
             $table->timestamps();
         });
     }

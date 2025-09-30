@@ -75,6 +75,7 @@ class KategoriController extends Controller
             ]
         );
 
+        // update data kategori
         $kategori = Kategori::where('id', $id)->update($validate);
         //menampilkan data
         $kategori = Kategori::find($id);
@@ -82,13 +83,13 @@ class KategoriController extends Controller
             $data['succes'] = true;
             $data['message'] = "Kategori Berhasil diperbarui";
             $data['data'] = $kategori;
-            return response()->json($data, 201);
+            return response()->json($data, Response::HTTP_OK);
         }
         else{
             $data['succes'] = false;
             $data['message'] = "Kategori tidak ditemukan";
             $data['data'] = $kategori;
-            return response()->json($data, 201);
+            return response()->json($data, Response::HTTP_NOT_FOUND);
         }
     }
 
