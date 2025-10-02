@@ -14,6 +14,8 @@ Route::get('/kategori',[KategoriController::class,'index']);
 Route::get('/obat',[ObatController::class,'index']);
 Route::post('/kategori',[KategoriController::class,'store']);
 Route::post('/obat',[ObatController::class,'store']);
+Route::get('/kategori/{id}', [KategoriController::class, 'show']);
+Route::get('/obat/{id}', [ObatController::class, 'show']);
 Route::patch('/kategori/{id}',[KategoriController::class,'update']);
 Route::patch('/obat/{id}',[ObatController::class,'update']);
 Route::delete('/kategori/{id}',[KategoriController::class,'destroy']);
