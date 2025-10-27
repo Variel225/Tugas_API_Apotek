@@ -82,9 +82,10 @@ class ObatController extends Controller
             ]
         );
 
-        // update data kategori
-        $obat = Obat::where('id', $id)->update($validate);
-        if ($obat){
+        // update data obat
+        $updated = Obat::where('id', $id)->update($validate);
+        if ($updated){
+            $obat = Obat::find($id);
             $data['succes'] = true;
             $data['message'] = "Obat Berhasil diperbarui";
             $data['data'] = $obat;
@@ -93,7 +94,7 @@ class ObatController extends Controller
         else{
             $data['succes'] = false;
             $data['message'] = "ObatS tidak ditemukan";
-            $data['data'] = $obat;
+            $data['data'] = $updated;
             return response()->json($data, Response::HTTP_NOT_FOUND);
         }
     }

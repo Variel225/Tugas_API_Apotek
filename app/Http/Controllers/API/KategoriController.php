@@ -83,7 +83,7 @@ class KategoriController extends Controller
         if ($kategori){
             $data['succes'] = true;
             $data['message'] = "Kategori Berhasil diperbarui";
-            $data['data'] = $kategori;
+            $data['data'] = $data;
             return response()->json($data, Response::HTTP_OK);
         }
         else{
