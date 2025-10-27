@@ -75,7 +75,7 @@ class ObatController extends Controller
         $validate = $request->validate(
             [
                 'nama_obat' => 'required|unique:obats',
-                'produsen_obat' => 'required|unique:obats',
+                'produsen_obat' => 'required',
                 'stok' => 'required|integer',
                 'harga' => 'required|numeric',
                 'kategori_id' => 'required|exists:kategoris,id'
