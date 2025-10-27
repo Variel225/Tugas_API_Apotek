@@ -33,7 +33,7 @@ class KategoriController extends Controller
     {
         $validate = $request->validate(
             [
-                'nama_kategori' => 'required',
+                'nama_kategori' => 'required|unique:kategoris',
                 'deskripsi' => 'required'
             ]
         );
@@ -71,7 +71,7 @@ class KategoriController extends Controller
     {
         $validate = $request->validate(
             [
-                'nama_kategori' => 'required',
+                'nama_kategori' => 'required|unique:kategoris',
                 'deskripsi' => 'required'
             ]
         );

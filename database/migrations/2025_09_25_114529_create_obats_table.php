@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('obats', function (Blueprint $table) {
             $table->id();
             $table->string('nama_obat');
-            $table->string('produsen_obat',100)->nullable();
+            $table->string('produsen_obat',100);
             $table->integer('stok')->default(0);
             $table->decimal('harga', 10, 2);
-            $table->foreignId('kategori_id')->setNull();
+            $table->foreignId('kategori_id')->constrained();
             $table->timestamps();
         });
     }
